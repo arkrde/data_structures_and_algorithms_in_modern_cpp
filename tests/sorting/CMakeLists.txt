@@ -1,6 +1,8 @@
 set(sources
     bubblesort_test.cpp
     insertionsort_test.cpp
+    selectionsort_test.cpp
+    shakersort_test.cpp
 )
 foreach(src ${sources})
     get_filename_component(src_name ${src} NAME_WE)
