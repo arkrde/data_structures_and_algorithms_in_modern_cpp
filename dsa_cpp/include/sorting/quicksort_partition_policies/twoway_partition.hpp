@@ -6,7 +6,8 @@ namespace quicksort {
 template <typename Iter, typename Comparator>
 class two_way_partition {
 private:
-    Iter partition_impl(Iter begin, Iter end, Comparator comp) {
+    Iter partition_impl(Iter begin, Iter end, Comparator comp, size_t subfile_size) {
+        if (end - begin <= 1) return end;
         auto pivot = --end;
         while (begin < end) {
             // Search from the beginning for the first element larger than the
@@ -35,8 +36,8 @@ private:
     }
 
 public:
-    Iter operator()(Iter begin, Iter end, Comparator comp) {
-        return partition_impl(begin, end, comp);
+    Iter operator()(Iter begin, Iter end, Comparator comp, size_t subfile_size = 1) {
+        return partition_impl(begin, end, comp, subfile_size);
     }
 };
 } // namespace quicksort
