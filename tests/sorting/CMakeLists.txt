@@ -4,6 +4,7 @@ set(sources
     selectionsort_test.cpp
     shakersort_test.cpp
     shellsort_test.cpp
+    quicksort_test.cpp
 )
 foreach(src ${sources})
     get_filename_component(src_name ${src} NAME_WE)
