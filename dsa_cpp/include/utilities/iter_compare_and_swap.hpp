@@ -32,4 +32,4 @@ void iter_compare_and_swap(FwdIter a1, FwdIter a2) {
 
 } // namespace utilities
 
-#endif // ITER_COMPARE_AND_SWAP_HPP
+#endif
