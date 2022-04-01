@@ -46,10 +46,10 @@ private:
 
 public:
     std::vector<Iter> operator()(Iter begin, Iter end, Comparator comp,
-                    size_t subfile_size = 1) {
+                                 size_t subfile_size = 1) {
         return partition_impl(begin, end, comp, subfile_size);
     }
 };
-} // namespace quicksort
+} // namespace partition_policy
 
 #endif
