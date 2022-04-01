@@ -58,6 +58,6 @@ public:
         return partition_impl(begin, end, comp, subfile_size);
     }
 };
-} // namespace quicksort
+} // namespace partition_policy
 
 #endif
