@@ -28,13 +28,13 @@ void insertion_sort(RandomAccessIter first, RandomAccessIter last,
     place_extremum_first(first, last, comp);
     // Adaptive sort
     for (auto iter = first + 2; iter != last; ++iter) {
-        auto begin = iter;
-        auto v = *begin;
-        while (comp(v, *(begin - 1))) {
-            *begin = *(begin - 1);
-            --begin;
+        auto it = iter;
+        auto v = *it;
+        while (comp(v, *(it - 1))) {
+            *it = *(it - 1);
+            --it;
         }
-        *begin = v;
+        *it = v;
     }
 }
 
