@@ -6,6 +6,8 @@ set(sources
     shellsort_test.cpp
     quicksort_test.cpp
     quicksort_subfile_optimization_test.cpp
+    median_of_three_quicksort_test.cpp
+    threeway_partition_quicksort_test.cpp
 )
 foreach(src ${sources})
     get_filename_component(src_name ${src} NAME_WE)
