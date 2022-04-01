@@ -5,7 +5,7 @@
 
 using sorting::shell_sort;
 
-static constexpr int ShortSequenceLength = 10;
+static constexpr int ShortSequenceLength = 100;
 static constexpr int LongSequenceLength = 10000;
 
 TEST(SortEval, ShortSequenceAscending) {

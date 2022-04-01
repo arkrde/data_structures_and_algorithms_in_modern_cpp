@@ -5,8 +5,8 @@
 
 using sorting::two_way_quicksort;
 
-static constexpr int ShortSequenceLength = 10;
-static constexpr int LongSequenceLength = 10000;
+static constexpr int ShortSequenceLength = 100;
+static constexpr int LongSequenceLength = 10000000;
 
 TEST(SortEval, ShortSequenceAscending) {
     std::vector<int> array(ShortSequenceLength);
