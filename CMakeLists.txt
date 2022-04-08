@@ -10,20 +10,14 @@ if(${CMAKE_VERSION} VERSION_LESS 3.14)
   include(cmake/add_FetchContent_MakeAvailable.cmake)
 endif()
 
-FetchContent_Declare(
-  googletest
-  GIT_REPOSITORY https://github.com/google/googletest.git
-  GIT_TAG release-1.11.0)
-FetchContent_MakeAvailable(googletest)
 
 # Enable testing using ctest
 enable_testing()
 
-file(GLOB headers ${CMAKE_SOURCE_DIR}/dsa_cpp/include)
+# file(GLOB headers ${CMAKE_SOURCE_DIR}/dsa_cpp/include)
 
-# Add source directories
+
+add_library(dsa_cpp INTERFACE)
+target_include_directories(dsa_cpp INTERFACE include)
+
 add_subdirectory(tests)
-
-message("status:")
-message("cpp compiler:  " ${CMAKE_CXX_COMPILER})
-message("build type:    " ${CMAKE_BUILD_TYPE})
