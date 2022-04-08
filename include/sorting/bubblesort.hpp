@@ -17,12 +17,12 @@ template <typename RandomIter, typename Comp,
               typename std::iterator_traits<RandomIter>::iterator_category,
               std::random_access_iterator_tag>::value> * = nullptr>
 void bubble_sort(RandomIter first, RandomIter last, Comp comparator) {
-  while (first != last) {
-    for (auto iter = last - 1; iter != first; --iter) {
-      iter_compare_and_swap(iter, iter - 1, comparator);
+    while (first != last) {
+        for (auto iter = last - 1; iter != first; --iter) {
+            iter_compare_and_swap(iter, iter - 1, comparator);
+        }
+        ++first;
     }
-    ++first;
-  }
 }
 
 template <typename RandomIter,
@@ -30,8 +30,8 @@ template <typename RandomIter,
               typename std::iterator_traits<RandomIter>::iterator_category,
               std::random_access_iterator_tag>::value> * = nullptr>
 void bubble_sort(RandomIter first, RandomIter last) {
-  using value_type = typename std::iterator_traits<RandomIter>::value_type;
-  bubble_sort(first, last, std::less<value_type>());
+    using value_type = typename std::iterator_traits<RandomIter>::value_type;
+    bubble_sort(first, last, std::less<value_type>());
 }
 
 } // namespace sorting
